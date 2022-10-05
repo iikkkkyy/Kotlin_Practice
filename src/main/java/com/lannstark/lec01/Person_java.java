@@ -1,10 +1,13 @@
 package com.lannstark.lec01;
 
-public class Person {
+import com.lannstark.lec12.JavaPerson;
 
+public class Person_java {
+
+  public static JavaPerson Factory;
   private final String name;
 
-  public Person(String name) {
+  public Person_java(String name) {
     this.name = name;
   }
 
