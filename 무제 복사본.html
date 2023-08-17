@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>We Got Some Rizz</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .tab-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .tab-button {
+    padding: 30px 80px; /* 크기 조절 */
+    background-color: white;
+    border: 2px solid #ccc; /* 테두리 추가 */
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 25px;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* 트랜지션 추가 */
+    margin-right: 40px;
+  }
+  
+  .tab-button.active {
+    background-color: black;
+    color: white;
+    border-color: black; /* 활성 탭의 테두리 색 변경 */
+  }
+  
+  .tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin-top: 20px; /* 이미지와의 간격 추가 */
+  }
+  
+  .tab-content img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+  <div class="tab-container">
+    <button class="tab-button" onclick="showTab(1)">About Us</button>
+    <button class="tab-button" onclick="showTab(2)">Set List</button>
+  </div>
+  
+  <div id="tab1" class="tab-content">
+    <img src="/Users/gimgangtae/Documents/setlist.jpeg" alt="탭 1 이미지">
+  </div>
+  
+  <div id="tab2" class="tab-content">
+    <img src="/Users/gimgangtae/Documents/aboutus.jpeg" alt="탭 2 이미지">
+  </div>
+
+  <script>
+    function showTab(tabNumber) {
+      var tabContents = document.getElementsByClassName('tab-content');
+      for (var i = 0; i < tabContents.length; i++) {
+        tabContents[i].style.display = 'none';
+      }
+      
+      document.getElementById('tab' + tabNumber).style.display = 'block';
+      
+      var tabButtons = document.getElementsByClassName('tab-button');
+      for (var i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].classList.remove('active');
+      }
+      tabButtons[tabNumber - 1].classList.add('active');
+    }
+    
+    showTab(1);
+  </script>
+</body>
+</html>
